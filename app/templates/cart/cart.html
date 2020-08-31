@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>total price: {{totalprice}}</p>
+<a href="{{url_for('checkout')}}">checkout</a>
+{% for goods in goods %}
+{% include 'cart/_cart.html' %}
+{% endfor %}
+
+{% endblock %}

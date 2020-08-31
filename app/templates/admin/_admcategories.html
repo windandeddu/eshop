@@ -1,0 +1,17 @@
+<tr>
+    <td>
+        {{ categories.id }}
+    </td>
+    <td>
+        <a href="{{ url_for('admin_category', id=categories.id)}}">
+            {{ categories.category }}
+        </a>
+    </td>
+    <td id="deleteitm">
+        <form class="deleteform{{categories.id}}" name='{{categories.id}}' onSubmit="return confirm('Are you sure?');" method="post">
+            <input type="text" name="cat_id" value="{{categories.id}}" hidden>
+            <button type="submit" formaction="/admin_delete_category/" title="delete category">x</button>
+        </form>
+    </td>
+</tr>
+

@@ -1,0 +1,29 @@
+<table>
+    <tr>
+        <td>
+            <img src="static/img_good/{{goods.image}}" width="100px">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="{{ url_for('good', id=goods.id)}}">
+                {{ goods.name }}
+            </a> {{ goods.id }}
+            <p>Price: {{goods.price }} * {{goods.count}} = {{ goods.price * goods.count }}</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+            <form class="foodform{{goods.id}}" name='{{goods.id}}' method="post">
+                <button type="submit" formaction="/change_qty/">Submit</button>
+                <button name="btn" class="{{goods.id}}" formaction="/less_qty/"> < </button>
+                <input class="count{{goods.id}}" type="text" name="count" class="{{goods.id}}" size="4" value="{{goods.count}}" style="text-align: center">
+                <input type="text" name="itm_id" value="{{goods.id}}" hidden>
+                <button name="btn" class="{{goods.id}}" formaction="/more_qty/"> > </button>
+                <button name="btn" class="{{goods.id}}" formaction="/delete_item/"> delete </button>
+            </form>
+            </p>
+        </td>
+    </tr>
+</table>

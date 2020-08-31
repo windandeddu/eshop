@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ goods.name }} {{ goods.id }}</h1>
+    <img src="/static/img_good/{{goods.image}}" width="200px">
+    <hr>
+
+    <p>Price: {{ goods.price }}</p>
+    <p>Description: {{ goods.description }}</p>
+    <form class="addToCartForm{{goods.id}}" name='{{goods.id}}' method="post">
+        <input type="text" name="count" size="4" value="{{goods.counts}}" style="text-align: center">
+        <input type="text" name="itm_id" value="{{goods.id}}" hidden>
+        <button type="submit" formaction="/add_to_cart/">Add To Cart</button>
+    </form>
+
+{% endblock %}

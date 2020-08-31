@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{{ url_for('category', id=category.id) }}">{{ category.category }}|</a>
+{% for inherited in inherited%}
+<a href="{{ url_for('category', id=inherited.id) }}">
+        {{ inherited.category }}
+        {% endfor %}
+</a> {{ inherited.id }}
+
+
+{% for goods in goods %}
+{% include '_goods.html' %}
+{% endfor %}
+
+{% endblock %}

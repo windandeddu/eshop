@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<b>Items in your order</b>
+{% for goods in goods %}
+{% include 'cart/_order.html' %}
+{% endfor %}
+<p>total price: <b>{{order.totalprice}}</b></p>
+<p>First name: <b>{{order.fname}}</b> </p>
+<p>Last name: <b>{{order.lname}}</b> </p>
+<p>Phone: <b>{{order.phone}}</b></p>
+<p>Adress: <b>{{order.address}}</b> </p>
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

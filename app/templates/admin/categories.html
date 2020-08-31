@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<table>
+    <th>id</th>
+    <th>name</th>
+    <th></th>
+    {% for categories in categories %}
+    {% include 'admin/_admcategories.html' %}
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,13 @@
+<table>
+    <tr>
+        <td>
+            <img src="/static/img_good/{{goods.image}}" width="50px">
+        </td>
+        <td>
+            <a href="{{ url_for('good', id=goods.id)}}">
+                {{ goods.name }}
+            </a> {{ goods.id }}
+            <p>Price: {{goods.price }} * {{goods.count}} = {{ goods.price * goods.count }}</p>
+        </td>
+    </tr>
+</table>

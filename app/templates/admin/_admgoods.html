@@ -1,0 +1,17 @@
+<tr>
+    <td>
+        {{ goods.id }}
+    </td>
+    <td>
+        <a href="{{ url_for('admin_good', id=goods.id)}}">
+            {{ goods.name }}
+        </a>
+    </td>
+    <td id="deleteitm">
+        <form class="deleteform{{goods.id}}" name='{{goods.id}}' onSubmit="return confirm('Are you sure?');" method="post">
+            <input type="text" name="itm_id" value="{{goods.id}}" hidden>
+            <button type="submit" formaction="/admin_delete_item/" title="delete item">x</button>
+        </form>
+    </td>
+</tr>
+

@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Welcome to Eshop</title>
+</head>
+<body>
+<div>Eshop:
+    <a href="{{ url_for('index') }}">Home </a> |
+    <a href="{{ url_for('categories')}}">Categories</a> |
+    {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">Login</a> |
+    <a href="{{ url_for('register') }}">Register</a> |
+    <a href="{{ url_for('cart')}}">Cart</a> |
+    {% else %}
+    <a href="{{ url_for('logout') }}">Logout</a> |
+    <a href="{{ url_for('new_category')}}">New category</a> |
+    <a href="{{ url_for('new_good')}}">New good</a> |
+    <a href="{{ url_for('cart')}}">Cart</a> |
+    <a href="{{ url_for('admin_goods')}}">admin goods</a> |
+    <a href="{{ url_for('admin_categories')}}">admin categories</a> |
+
+    {% endif %}
+</div>
+<hr>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
